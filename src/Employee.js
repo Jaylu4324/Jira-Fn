@@ -21,7 +21,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-
+import Stack from "@mui/material/Stack"
 import { Container } from "@mui/material";
 import axios from "axios";
 
@@ -31,7 +31,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: 11,
   },
 }));
 
@@ -165,14 +165,13 @@ export default function FormDialog() {
     <React.Fragment>
       
       <Grid
-        spacing={3}
-        container
-        direction="row"
-        justifyContent="end"
-        alignItems="center"
+      sx={{px:2,my:2}}
+      container
+      justifyContent="end"
        
       >
-        <Grid  xs={2}>
+        <Grid items sm={8} md={2}>
+     
           <Button
             variant="outlined"
             sx={{ alignItems: "right" ,my:1}}
@@ -181,7 +180,8 @@ export default function FormDialog() {
           >
             Add Employee
           </Button>
-        </Grid>
+          </Grid>
+     
       </Grid>
 
       <Dialog open={open} onClose={handleClose}>
@@ -334,9 +334,9 @@ export default function FormDialog() {
         </DialogActions>
       </Dialog>
 
-      <div  >
-        <TableContainer component={Paper} sx={{ mt: 4 }}>
-          <Table sx={{ maxWidth: "100%", margin:'auto',mx:3 }} aria-label="customized table">
+      <div >
+        <TableContainer component={Paper} sx={{ mt: 4 ,px:2}} >
+          <Table sx={{ maxWidth: "100%", margin:'auto'}} aria-label="customized table">
             <TableHead>
               <TableRow>
                 <StyledTableCell align="center">Email</StyledTableCell>
@@ -352,7 +352,7 @@ export default function FormDialog() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {/* <StyledTableCell component="th" scope="row"> */}
+       
               {finalarr && finalarr.length>0 && finalarr.map((data) => (
                 <StyledTableRow>
                   <StyledTableCell align="center">{data.EmployeeEmail}</StyledTableCell>
@@ -402,18 +402,7 @@ export default function FormDialog() {
           </Table>
         </TableContainer>
 
-        {/* {
-            finalarr.map((data)=>(
-              <tr>
-                <td style={{border:'1px solid black'}}>{data.Email}</td>
-                <td style={{border:'1px solid black'}}>{data.Name}</td>
-                <td style={{border:'1px solid black'}}>{data.Number}</td>
-                <td style={{border:'1px solid black'}}>{data.Gender}</td>
-                <td style={{border:'1px solid black'}}>{data.Age}</td>
-                <td style={{border:'1px solid black'}}>{data.Address}</td>
-              </tr>
-            ))
-          } */}
+   
       </div>
     </React.Fragment>
   );

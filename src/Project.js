@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import Box from "@mui/material/Box"
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -16,7 +16,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import Box from '@mui/material/Box';
+
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -127,8 +127,8 @@ export default function FormDialog() {
     })
 
   return (
-    <React.Fragment>
-      <Button variant="outlined" sx={{ml:170}} onClick={handleClickOpen} style={{backgroundColor:"black",color:"white"}}>
+    <Box>
+      <Button variant="outlined" onClick={handleClickOpen} style={{backgroundColor:"black",color:"white"}}>
         Add Project
       </Button>
       <Dialog
@@ -287,7 +287,7 @@ export default function FormDialog() {
           
 
       </div>
-    </React.Fragment>
+    </Box>
     
   );
 }
